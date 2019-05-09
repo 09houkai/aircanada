@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="aircanada">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Canada</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.10/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="mobile">
+      <div class="row">
+        <div class="column small-4">
+          <img src="img/menu-icon.png"  />
+        </div>
+        <div class="column small-4">
+          <img src="img/ac_logo.svg" width="100%" />
+        </div>
+        <div class="column small-4">
+          <img src="img/person-icon.png" class="right" />
+        </div>
+      </div>  
+    </header>
+
+    <header class="desktop">
+      <div class="topNav">
+        <div class="row">
+          <div class="column large-5 right">
+            <div class="langSwitcher">
+              <img src="img/flag-CA.svg" width="20px"/>
+              <a href="#">English</a>
+            </div>
+            <div class="searchBox">
+              <input type="text" name="search" placeholder="FIND" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <div class="row">
+          <div class="column large-4 medium-4 small-12">
+            <img src="img/ac_logo.svg" width="320px" />
+          </div>
+
+          <div class="column large-8 medium-8 small-12">
+            <ul class="right">
+              <li>Book</li>
+              <li>Investor Relations</li>
+              <li>Corporate Responsibility</li>
+              <li>Careers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subNav">
+        <div class="row">
+          <div class="column">
+            <ul>
+              <li>Home</li>
+              <li>Media Centre</li>
+              <li>Brand Permissions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="row banner">
+      <div class="column">
+        <img src="img/lg-ac-livery.png" width="1400px" class="desktop" />
+        <img src="img/sm-ac-livery.png" width="100%" class="mobile" />
+      </div>
+    </div>
+
+    <div class="row main-content">
+      <div class="column">
+        <div class="row title">
+          <div class="column">
+            <h1>Air Canada Rights and Brand Permissions</h1>
+          </div>
+        </div>
+
+        <div class="row formWrapper">
+          <div class="column">
+            <form class="requestForm" ng-controller="formCtrl" ng-submit="submit()" method="post">
+              <div class="row">
+                <div class="column">
+                  <h2>Request for permission</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column large-2 medium-6 small-12">
+                  <label>TITLE</label>
+                  <select ng-model="formData.title">
+                    <option>TITLE</option>
+                    <option>Mr.</option>
+                    <option>Mrs.</option>
+                    <option>Ms.</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="column large-6 medium-6 small-12">
+                  <label for="firstname">FIRST NAME</label>
+                  <input id="firstname" type="text" name="firstname" placeholder="FIRST NAME" ng-model="formData.firstname" required />
+                </div>
+                <div class="column large-6 medium-6 small-12">
+                  <label for="lastname">LAST NAME</label>
+                  <input id="lastname" type="text" name="lastname" placeholder="LAST NAME" ng-model="formData.lastname" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column large-4 medium-4 small-12">
+                  <label for="company">COMPANY <em>* OPTIONAL</em></label>
+                  <input id="company" type="text" name="company" placeholder="COMPANY" ng-model="formData.company"/>
+                </div>
+                <div class="column large-4 medium-4 small-12">
+                  <label for="phone">PHONE NUMBER</label>
+                  <input id="phone" type="text" name="phone" placeholder="PHONE NUMBER" ng-model="formData.phone" required />
+                </div>
+                <div class="column large-4 medium-4 small-12">
+                  <label for="email">EMAIL ADDRESS</label>
+                  <input id="email" type="text" name="email" placeholder="EMAIL ADDRESS" ng-model="formData.email" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column">
+                  <h2>Media type</h2>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column">
+                  <input type="checkbox" name="mediaType" ng-model="formData.mediaType.logo" id="logo"><label for="logo">LOGO</label>
+                  <input type="checkbox" name="mediaType" ng-model="formData.mediaType.photo" id="photo"><label for="photo">PHOTO</label>
+                  <input type="checkbox" name="mediaType" ng-model="formData.mediaType.advertising" id="advertising"><label for="advertising">ADVERTISING</label>
+                  <input type="checkbox" name="mediaType" ng-model="formData.mediaType.other" id="other"><label for="other">OTHER</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column">
+                  <p>DESCRIBE YOUR REQUEST OR QUESTION, PLEASE INCLUDE THE FOLLOWING IN YOUR REQUEST:</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column large-6 medium-6 small-12">
+                  <ul>
+                    <li>Specific image(s) or material for which you are seeking permission</li>
+                    <li>Publisher, if applicable</li>
+                    <li>Title, if applicable</li>
+                    <li>Deadline</li>
+                  </ul>
+                </div>
+
+                <div class="column large-6 medium-6 small-12">
+                  <ul>
+                    <li>Surrounding copy or text to the Air Canada material you wish to use in your project</li>
+                    <li>Publishing date and countries, if applicable</li>
+                    <li>How Air Canada will be featured (visual or text)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column">
+                  <textarea ng-model="formData.description" required></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="column large-2 medium-4 small-12">
+                  <input type="reset" class="button secondary" value="Clear" />
+                </div>
+                <div class="column large-2 medium-4 small-12">
+                  <input type="submit" class="button primary right" value="Submit" />
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      <div class="links">
+        <div class="row">
+          <div class="column large-4 medium-4 small-12">
+            <ul>
+              <li class="large">About</li>
+              <li>Corporate Profile</li>
+              <li>Corporate Governance</li>
+              <li>Media Centre</li>
+              <li>Our Fleet</li>
+              <li>Safety</li>
+              <li>Investor Relations</li>
+              <li>Suppliers</li>
+            </ul>
+          </div>
+          <div class="column large-4 medium-4 small-12">
+            <ul>
+              <li class="large">CORPORATE RESPONSIBILITY</li>
+              <li>Air Canada Foundation</li>
+              <li>In the Community</li>
+              <li>Commercial Sponsorship</li>
+              <li>LeaveLess</li>
+              <li>Corporate Sustainability Reports</li>
+              <li>Modern Slavery Act Statement</li>
+            </ul>
+          </div>
+          
+          <div class="column large-4 medium-4 small-12">
+            <ul>
+              <li>OFFICIAL LANGUAGES</li>
+              <li>&nbsp;</li>
+              <li class="large">CAREERS</li>
+              <li>BOOK A FLIGHT</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+            <div class="column">
+               Indicates an external site which may not meet accessibility guidelines.
+            </div>
+          </div>
+      </div>
+
+      <div class="bottomFooter">
+        <div class="row">
+          <div class="column large-4 medium-4 small-12">
+            <img src="img/skytrax-en.svg" width="80px" />
+          </div>
+
+          <div class="column large-4 medium-4 small-12">
+            <ul>
+              <li>© 2017 Air Canada</li>
+              <li>General Conditions of Carriage & Tariffs</li>
+              <li>Privacy Policy</li>
+              <li>Term of use</li>
+            </ul>
+          </div>
+
+          <div class="column large-4 medium-4 small-12">
+            <img src="img/ac_star_en_rgb_hor.svg" width="245px">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
